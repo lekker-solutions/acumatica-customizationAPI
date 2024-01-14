@@ -1,0 +1,38 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<!-- CTC SETTINGS -->
+<PropertyGroup>
+   <AcumaticaSiteDir>..\..\CustomizationAPI_23_1\</AcumaticaSiteDir>
+   <CustDir>..\..\cust\$(AssemblyName)\</CustDir>
+   <CustBuildZip>..\..\$(AssemblyName)</CustBuildZip>
+   <AcuVersion>23.114.0025</AcuVersion>
+	<ShareFolder>C:\Users\KyleVanderstoep\OneDrive - Contou Inc\Shared\CustomizationAPI\</ShareFolder>
+	<Today>$([System.DateTime]::Now.ToString('yyyy.MM.dd'))</Today>
+</PropertyGroup>
+<!-- CTC SETTINGS END -->
+
+<!-- CTC TARGETS -->
+	<Target Name="DebugBuild" Condition="'$(Configuration)' == 'Debug'">
+		<Message Text="-------------------------------------------------------------" Importance="high" />
+		<Message Text="-----------------     COPYING DLLS    -----------------------" Importance="high" />
+		<Message Text="-------------------------------------------------------------" Importance="high" />
+		<Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(AcumaticaSiteDir)Bin\" SkipUnchangedFiles="False" />
+	</Target>
+  	<Target Name="ReleaseCopy" Condition="'$(Configuration)' == 'Release'">
+		<Message Text="-------------------------------------------------------------" Importance="high" />
+		<Message Text="------------     COPYING DLLS FOR RELEASE    -----------------" Importance="high" />
+		<Message Text="-------------------------------------------------------------" Importance="high" />
+		<Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(CustDir)Bin\" SkipUnchangedFiles="False" />
+	</Target>
+  <Target Name="ReleaseBuild" Condition="'$(Configuration)' == 'Release'">
+    <Message Text="-------------------------------------------------------------" Importance="high" />
+    <Message Text="-----------------   PACKING $(AssemblyName)   -----------------------" Importance="high" />
+    <Message Text="-------------------------------------------------------------" Importance="high" />
+    <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(CustDir)Bin\" SkipUnchangedFiles="False" />
+    <Exec Command="$(AcumaticaSiteDir)Bin\PX.CommandLine.exe /method BuildProject /in $(CustDir) /out $(CustBuildZip).zip /level 10" />
+    <Message Text="-------------------------------------------------------------" Importance="high" />
+    <Message Text="-----------------   Deploying $(AssemblyName)   -----------------------" Importance="high" />
+    <Message Text="-------------------------------------------------------------" Importance="high" />
+    <Copy SourceFiles="$(CustBuildZip).zip" DestinationFiles="C:\Users\KyleVanderstoep\OneDrive - Contou Inc\Shared\PerfectAire\$(AssemblyName)[$(AcuVersion)][$(Today)].zip" SkipUnchangedFiles="False" />
+  </Target>
+<!-- CTC TARGETS END -->
+</Project>

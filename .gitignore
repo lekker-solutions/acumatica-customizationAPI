@@ -1,0 +1,39 @@
+
+# Settings
+/.vs
+/.idea
+/src/.vs
+/src/.idea
+acumatica-customizationAPI.sln.DotSettings.user
+/Packages
+# Project files
+
+src/.vs
+src/*/bin/*
+src/*/obj/*
+
+# Customization files
+
+/cust/*/Bin
+
+/*.zip
+
+#Site Files
+/BackUp
+/Customization
+/CustomizationAPI_23_1/*
+!/CustomizationAPI_23_1/App_Data/
+/CustomizationAPI_23_1/App_Data/*
+!/CustomizationAPI_23_1/App_Data/SnapshotConfigs/
+/CustomizationAPI_23_1/App_Data/SnapshotConfigs/*
+!/CustomizationAPI_23_1/Content/
+/CustomizationAPI_23_1/Content/*
+!/CustomizationAPI_23_1/Content/svg_icons/
+/CustomizationAPI_23_1/Content/svg_icons/*
+!/CustomizationAPI_23_1/Content/svg_icons/LS*
+!/CustomizationAPI_23_1/Pages
+/CustomizationAPI_23_1/Pages/*
+!/CustomizationAPI_23_1/Pages/LS
+/Snapshots
+/TemporaryAspFiles
+

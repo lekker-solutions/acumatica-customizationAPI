@@ -1,0 +1,57 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Info", "Info", "{1FC1097E-061D-468E-B22E-C4E20042FC95}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		src\acumatica.targets = src\acumatica.targets
+		initRepo.ps1 = initRepo.ps1
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql", "Sql", "{0F592473-904F-4774-ADB1-706060F6444E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LS.AcumaticaCustomizationAPI", "src\LS.AcumaticaCustomizationAPI\LS.AcumaticaCustomizationAPI.csproj", "{82B688F3-26F7-48C1-A106-84E968DC5153}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CustomizationAPI_23_1", "CustomizationAPI_23_1\", "{CD391C12-88C9-401B-9EE1-B3F55CFAD52E}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_62130"
+		Debug.AspNetCompiler.PhysicalPath = "CustomizationAPI_23_1\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62130\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_62130"
+		Release.AspNetCompiler.PhysicalPath = "CustomizationAPI_23_1\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62130\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "62130"
+		SlnRelativePath = "CustomizationAPI_23_1\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82B688F3-26F7-48C1-A106-84E968DC5153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82B688F3-26F7-48C1-A106-84E968DC5153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82B688F3-26F7-48C1-A106-84E968DC5153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82B688F3-26F7-48C1-A106-84E968DC5153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD391C12-88C9-401B-9EE1-B3F55CFAD52E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD391C12-88C9-401B-9EE1-B3F55CFAD52E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9ACCB828-C541-4337-BED0-5EF72C9C5298}
+	EndGlobalSection
+EndGlobal
