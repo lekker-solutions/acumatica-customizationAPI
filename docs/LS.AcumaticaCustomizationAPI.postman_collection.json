@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "f4b53421-8806-4dcd-a2fd-2a44dbd018a3",
+		"name": "LS.AcumaticaCustomizationAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6655523"
+	},
+	"item": [
+		{
+			"name": "Reload From Database",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/CustomizationAPI_23_1/Webhooks/Company/f2922399-11fd-4482-99f4-acba22136cbb?method=reloadFromDb&Project=testProj",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"CustomizationAPI_23_1",
+						"Webhooks",
+						"Company",
+						"f2922399-11fd-4482-99f4-acba22136cbb"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "reloadFromDb"
+						},
+						{
+							"key": "Project",
+							"value": "testProj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save to Folder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/CustomizationAPI_23_1/Webhooks/Company/f2922399-11fd-4482-99f4-acba22136cbb?method=saveproject&Project=testProj&Dir=D:\\Repos\\acumatica-customizationAPI\\cust",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"CustomizationAPI_23_1",
+						"Webhooks",
+						"Company",
+						"f2922399-11fd-4482-99f4-acba22136cbb"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "saveproject"
+						},
+						{
+							"key": "Project",
+							"value": "testProj"
+						},
+						{
+							"key": "Dir",
+							"value": "D:\\Repos\\acumatica-customizationAPI\\cust"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

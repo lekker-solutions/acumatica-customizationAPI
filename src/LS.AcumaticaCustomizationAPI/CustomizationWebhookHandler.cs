@@ -12,6 +12,7 @@
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 using LS.AcumaticaCustomizationAPI.Workers;
 using Microsoft.Extensions.Primitives;
 using PX.Api.Webhooks;
@@ -28,11 +29,12 @@ namespace LS.AcumaticaCustomizationAPI
         {
             StringValues method      = context.Request.Query["method"];
             StringValues projectName = context.Request.Query["Project"];
+            StringValues directory   = context.Request.Query["Dir"];
 
-            if (method.Count < 1)
-                WriteResponse(context, "Please provide a method parameter", 400);
-            if (projectName.Count < 1)
-                WriteResponse(context, "Please provide a projectName parameter", 400);
+            if (string.IsNullOrWhiteSpace(method))
+                WriteResponse(context, "Please provide a method", 400);
+            if (string.IsNullOrWhiteSpace(projectName))
+                WriteResponse(context, "Please provide a projectName", 400);
             else
                 switch (method[0]?.ToLower())
                 {
@@ -40,8 +42,9 @@ namespace LS.AcumaticaCustomizationAPI
                         CustomizationWorker.ReloadFromDatabase(projectName[0]);
                         break;
                     case "saveproject":
-                        CustomizationWorker.SaveProject(projectName[0],
-                            "D:\\Repos\\acumatica-customizationAPI\\CustomizationAPI_23_1\\test");
+                        if (string.IsNullOrWhiteSpace(directory))
+                            WriteResponse(context, "Please provide a dir", 400);
+                        CustomizationWorker.SaveProject(projectName[0], HttpUtility.UrlDecode(directory));
                         break;
                     default:
                         WriteResponse(context, $"Method {method[0]} not a valid method", 400);
@@ -53,6 +56,7 @@ namespace LS.AcumaticaCustomizationAPI
         {
             TextWriter writer = context.Response.CreateTextWriter();
             writer.Write(body);
+            writer.Flush();
             context.Response.StatusCode = statusCode;
         }
     }
