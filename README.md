@@ -5,6 +5,8 @@ When this package is installed on an acumatica site, it allows you to manage cus
 This is useful for managing customization projects in a source control system like git. Often times developers can forget to load their database customizations (scripts, site map entries etc)
 from the database and save them before committing. This would be the start of a helpful tool to prevent this.
 
+The webhook URL is: {BaseURL}/Webhooks/{YourTenantName}/74026c0b-201e-41f6-bb6d-8a0068aa7c42
+
 Use the following query parameters:
 
 | Parameter | Description                 |
