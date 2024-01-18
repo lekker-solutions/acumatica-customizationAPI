@@ -4,6 +4,7 @@
     <BaseOutputPath>bin\</BaseOutputPath>
     <LangVersion>latest</LangVersion>
     <Configurations>Debug;Release</Configurations>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <DefineConstants>TRACE;DEBUG;</DefineConstants>
@@ -16,23 +17,12 @@
       <HintPath>$(AcumaticaSiteDir)Bin\Autofac.dll</HintPath>
       <Private>false</Private>
     </Reference>
-    <Reference Include="Autofac.Integration.WebApi">
+    <Reference Include="Microsoft.Extensions.Primitives">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(AcumaticaSiteDir)Bin\Autofac.Integration.WebApi.dll</HintPath>
-    </Reference>
-    <Reference Include="PX.Hosting">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(AcumaticaSiteDir)Bin\PX.Hosting.dll</HintPath>
-    </Reference>
-    <Reference Include="CommonServiceLocator">
-      <HintPath>$(AcumaticaSiteDir)\Bin\CommonServiceLocator.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(AcumaticaSiteDir)Bin\Serilog.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>$(AcumaticaSiteDir)Bin\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="PX.Web.Customization">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>$(AcumaticaSiteDir)Bin\PX.Web.Customization.dll</HintPath>
     </Reference>
     <Reference Include="Autofac">
@@ -45,46 +35,21 @@
       <HintPath>$(AcumaticaSiteDir)Bin\PX.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="PX.Common.Std">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(AcumaticaSiteDir)Bin\PX.Common.Std.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="PX.CS.Contracts">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(AcumaticaSiteDir)Bin\PX.CS.Contracts.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="PX.Data">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(AcumaticaSiteDir)Bin\PX.Data.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="PX.SM">
+    <Reference Include="PX.Api.Webhooks.Abstractions">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(AcumaticaSiteDir)Bin\PX.SM.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="PX.Data.BQL.Fluent">
-      <HintPath>$(AcumaticaSiteDir)Bin\PX.Data.BQL.Fluent.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="PX.Objects">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(AcumaticaSiteDir)Bin\PX.Objects.dll</HintPath>
+      <HintPath>$(AcumaticaSiteDir)Bin\PX.Api.Webhooks.Abstractions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Http">
-      <HintPath>$(AcumaticaSiteDir)Bin\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc">
-      <HintPath>$(AcumaticaSiteDir)Bin\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost">
-      <HintPath>$(AcumaticaSiteDir)Bin\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Autofac\" />
   </ItemGroup>
 
   <!-- Build Settings -->

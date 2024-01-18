@@ -1,0 +1,13 @@
+﻿<Webhook>
+    <data-set>
+        <relations format-version="3" relations-version="20160101" main-table="WebHook" />
+        <layout>
+            <table name="WebHook" />
+        </layout>
+        <data>
+            <WebHook>
+                <row WebHookID="74026c0b-201e-41f6-bb6d-8a0068aa7c42" Name="LS.CustomizationAPI" Handler="LS.AcumaticaCustomizationAPI.CustomizationWebhookHandler" IsActive="1" IsSystem="1" RequestLogLevel="0" RequestRetainCount="10" NoteID="7f336fd9-4ab6-ee11-88d4-d880839ca5be" />
+            </WebHook>
+        </data>
+    </data-set>
+</Webhook>
