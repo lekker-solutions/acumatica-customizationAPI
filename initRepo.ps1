@@ -12,3 +12,4 @@ function InstallSite([string] $version){
 }
 
 InstallSite("23.114.0025")
+InstallSite("24.114.0020")
